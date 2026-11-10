@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSD Soluções | 5G Standalone, FWA, Nuvem, Dev & Segurança Digital</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            ssd: {
+              dark: '#060913',
+              card: '#0F1629',
+              primary: '#0052FF',
+              cyan: '#00E5FF',
+              purple: '#7C3AED'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #060913;
+      color: #F8FAFC;
+    }
+    .glass-card {
+      background: rgba(15, 22, 41, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.4);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #00E5FF 0%, #3B82F6 50%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 82, 255, 0.25) 0%, rgba(124, 58, 237, 0.1) 40%, transparent 70%);
+    }
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.3) !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: #00E5FF !important;
+      width: 24px !important;
+      border-radius: 6px !important;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-ssd-cyan selection:text-ssd-dark">
+
+  <!-- Barra Superior Operadora -->
+  <div class="bg-slate-950 border-b border-white/5 text-xs text-slate-400 py-2 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex space-x-6">
+        <a href="#" class="text-white font-semibold border-b-2 border-ssd-cyan pb-0.5">Para Você</a>
+        <a href="#empresas" class="hover:text-white transition">Para Empresas (B2B)</a>
+        <a href="#devsec" class="hover:text-white transition">Desenvolvimento & TI</a>
+        <a href="#cobertura" class="hover:text-white transition">Mapa de Cobertura 5G</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-4">
+        <span><i class="fa-solid fa-signal text-ssd-cyan mr-1"></i> Rede 5G Standalone Ativa</span>
+        <span>|</span>
+        <a href="#" class="hover:text-white">Acessibilidade</a>
+        <a href="#" class="hover:text-white">Ouvidoria</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar Principal -->
+  <header class="sticky top-0 z-50 bg-ssd-dark/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ssd-primary via-blue-500 to-ssd-cyan flex items-center justify-center shadow-lg shadow-blue-500/30">
+          <i class="fa-solid fa-bolt text-white text-xl"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-extrabold tracking-tight text-white">SSD</span>
+          <span class="text-xs block uppercase tracking-widest text-ssd-cyan font-bold -mt-1">Soluções Telecom</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#movel5g" class="hover:text-ssd-cyan transition">Móvel 5G</a>
+        <a href="#fwa" class="hover:text-ssd-cyan transition">Internet FWA 5G</a>
+        <a href="#ssddrive" class="hover:text-ssd-cyan transition">SSD Drive Cloud</a>
+        <a href="#ssdmusic" class="hover:text-ssd-cyan transition">SSD Music</a>
+        <a href="#devsec" class="hover:text-ssd-cyan transition">Dev & Segurança</a>
+        <a href="#streaming" class="hover:text-ssd-cyan transition">TV & Streaming Hub</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="#portal" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition">
+          <i class="fa-regular fa-user mr-2 text-ssd-cyan"></i> Meu SSD
+        </a>
+        <button onclick="openCheckoutModal('Plano 5G Ilimitado', '169,90', 'mobile')" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-ssd-cyan to-blue-400 hover:opacity-95 transition shadow-lg shadow-cyan-500/20">
+          Assinar Agora
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden hero-glow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-ssd-cyan/30 text-ssd-cyan text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-ssd-cyan animate-ping"></span>
+            <span>Infraestrutura Padrão Tier-1</span>
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+            Conectividade <span class="gradient-text">Ultra 5G, Dev</span> e Nuvem Inteligente.
+          </h1>
+          <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+            A <strong>SSD Soluções</strong> une a rede móvel 5G mais rápida, internet residencial sem fios (FWA), nuvem <strong>SSD Drive</strong>, desenvolvimento de softwares/apps e soluções de segurança digital em um único ecossistema.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#movel5g" class="px-7 py-4 rounded-2xl bg-ssd-primary hover:bg-blue-600 text-white font-bold text-base shadow-xl shadow-blue-600/30 transition flex items-center">
+              Conhecer Planos 5G <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#devsec" class="px-7 py-4 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-white font-semibold text-base border border-white/15 transition flex items-center">
+              <i class="fa-solid fa-code text-ssd-cyan mr-2"></i> Soluções de TI & Dev
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">1.5 Gbps</p>
+              <p class="text-xs text-slate-400">Velocidade de Pico 5G</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-ssd-cyan">99.9%</p>
+              <p class="text-xs text-slate-400">Disponibilidade SLA</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-extrabold text-white">Até 5 TB</p>
+              <p class="text-xs text-slate-400">Nuvem SSD Drive</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 relative border border-white/15 shadow-2xl">
+            <div class="absolute -top-4 right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+              Ecossistema Completo SSD
+            </div>
+            <h3 class="text-xl font-bold mb-6 flex items-center">
+              <i class="fa-solid fa-layer-group text-ssd-cyan mr-3"></i> Nossos Serviços Integrais
+            </h3>
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-ssd-cyan flex items-center justify-center">
+                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Rede Móvel 5G Pura</h4>
+                    <p class="text-xs text-slate-400">eSIM Instantâneo + Roaming Nacional</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg">Incluso</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-ssd-cyan flex items-center justify-center">
+                    <i class="fa-solid fa-wifi text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">SSD FWA 5G (Sem Cabos)</h4>
+                    <p class="text-xs text-slate-400">Roteador Wi-Fi 6 Plug & Play</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-ssd-cyan bg-cyan-500/10 px-2.5 py-1 rounded-lg">Até 1 Gbps</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                    <i class="fa-solid fa-code text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Dev de Sites & Apps</h4>
+                    <p class="text-xs text-slate-400">Sistemas sob medida & Banco de Dados</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-lg">Sob Consulta</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm">Segurança Digital</h4>
+                    <p class="text-xs text-slate-400">Proteção DDoS & Criptografia AES</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-pink-300 bg-pink-500/10 px-2.5 py-1 rounded-lg">Pro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faixa de Vantagens e Reconhecimento -->
+  <section class="py-8 bg-slate-950/80 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex items-center justify-center space-x-3 p-3">
+          <i class="fa-solid fa-shield-halved text-2xl text-ssd-cyan"></i>
+          <div class="text-left">
+            <p class="text-sm font-bold text-white">Sem Fidelidade</p>
+            <p class="text-xs text-slate-400">Cancele quando quiser</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center space-x-3 p-3">
+          <i class="fa-solid fa-sim-card text-2xl text-ssd-cyan"></i>
+          <div class="text-left">
+            <p class="text-sm font-bold text-white">eSIM Instantâneo</p>
+            <p class="text-xs text-slate-400">Ativação rápida</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center space-x-3 p-3">
+          <i class="fa-solid fa-headset text-2xl text-ssd-cyan"></i>
+          <div class="text-left">
+            <p class="text-sm font-bold text-white">Atendimento 24/7</p>
+            <p class="text-xs text-slate-400">Suporte técnico dedicado</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center space-x-3 p-3">
+          <i class="fa-solid fa-award text-2xl text-ssd-cyan"></i>
+          <div class="text-left">
+            <p class="text-sm font-bold text-white">Rede Nº 1 em 5G</p>
+            <p class="text-xs text-slate-400">Menor latência do país</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 1: Planos Móvel 5G -->
+  <section id="movel5g" class="py-20 bg-slate-950/60 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-ssd-cyan font-bold text-xs uppercase tracking-widest">Mobilidade Sem Fronteiras</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-2">Planos Rede Móvel 5G</h2>
+        <p class="text-slate-400 mt-3">Escolha a franquia ideal para o seu consumo diário com WhatsApp ilimitado, nuvem SSD Drive e SSD Music Hi-Fi inclusos.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <!-- 43 GB -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">SSD Start 5G</span>
+              <span class="text-xs font-bold text-ssd-cyan bg-cyan-500/10 px-2.5 py-1 rounded-lg">5G Standalone</span>
+            </div>
+            <h3 class="text-4xl font-extrabold mt-3 text-white">43 GB</h3>
+            <p class="text-xs text-ssd-cyan mt-1">Navegação diária com ultra velocidade</p>
+
+            <div class="my-6 pt-6 border-t border-white/10 space-y-3 text-sm text-slate-300">
+              <p><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> WhatsApp & Waze sem descontar</p>
+              <p><i class="fa-solid fa-cloud text-blue-400 mr-2"></i> <strong>100 GB</strong> no SSD Drive Cloud</p>
+              <p><i class="fa-solid fa-music text-pink-400 mr-2"></i> <strong>SSD Music</strong> incluso</p>
+              <p><i class="fa-solid fa-sim-card text-slate-400 mr-2"></i> Opção eSIM ou Chip Físico</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <div class="flex items-baseline mb-4">
+              <span class="text-sm text-slate-400 mr-1">R$</span>
+              <span class="text-4xl font-extrabold text-white">49</span><span class="text-lg font-bold text-white">,90</span><span class="text-xs text-slate-400 ml-1">/mês</span>
+            </div>
+            <button onclick="openCheckoutModal('Plano Móvel 43 GB', '49,90', 'mobile')" class="w-full py-3.5 rounded-xl bg-white/10 hover:bg-ssd-primary text-white font-bold text-sm transition">Contratar 43 GB</button>
+          </div>
+        </div>
+
+        <!-- 48 GB -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">SSD Controle Pro</span>
+              <span class="text-xs font-bold text-ssd-cyan bg-cyan-500/10 px-2.5 py-1 rounded-lg">Rede Avançada</span>
+            </div>
+            <h3 class="text-4xl font-extrabold mt-3 text-white">48 GB</h3>
+            <p class="text-xs text-ssd-cyan mt-1">Ideal para redes sociais e músicas</p>
+
+            <div class="my-6 pt-6 border-t border-white/10 space-y-3 text-sm text-slate-300">
+              <p><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> WhatsApp, Instagram e Waze ilimitados</p>
+              <p><i class="fa-solid fa-cloud text-blue-400 mr-2"></i> <strong>200 GB</strong> no SSD Drive Cloud</p>
+              <p><i class="fa-solid fa-music text-pink-400 mr-2"></i> <strong>SSD Music Hi-Fi</strong> incluso</p>
+              <p><i class="fa-solid fa-phone text-slate-400 mr-2"></i> Ligações ilimitadas para todo o Brasil</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <div class="flex items-baseline mb-4">
+              <span class="text-sm text-slate-400 mr-1">R$</span>
+              <span class="text-4xl font-extrabold text-white">64</span><span class="text-lg font-bold text-white">,90</span><span class="text-xs text-slate-400 ml-1">/mês</span>
+            </div>
+            <button onclick="openCheckoutModal('Plano Móvel 48 GB', '64,90', 'mobile')" class="w-full py-3.5 rounded-xl bg-white/10 hover:bg-ssd-primary text-white font-bold text-sm transition">Contratar 48 GB</button>
+          </div>
+        </div>
+
+        <!-- 91 GB -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-400">SSD Pós Max</span>
+              <span class="text-xs font-bold text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-lg">Redes Ilimitadas</span>
+            </div>
+            <h3 class="text-4xl font-extrabold mt-3 text-white">91 GB</h3>
+            <p class="text-xs text-purple-300 mt-1">Para quem vive conectado no streaming</p>
+
+            <div class="my-6 pt-6 border-t border-white/10 space-y-3 text-sm text-slate-300">
+              <p><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> WhatsApp, Instagram, TikTok e YouTube</p>
+              <p><i class="fa-solid fa-cloud text-purple-400 mr-2"></i> <strong>500 GB</strong> no SSD Drive Cloud</p>
+              <p><i class="fa-solid fa-tv text-pink-400 mr-2"></i> <strong>SSD Play TV</strong> + SSD Music Hi-Fi</p>
+              <p><i class="fa-solid fa-plane text-blue-400 mr-2"></i> Roaming das Américas incluso</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <div class="flex items-baseline mb-4">
+              <span class="text-sm text-slate-400 mr-1">R$</span>
+              <span class="text-4xl font-extrabold text-white">89</span><span class="text-lg font-bold text-white">,90</span><span class="text-xs text-slate-400 ml-1">/mês</span>
+            </div>
+            <button onclick="openCheckoutModal('Plano Móvel 91 GB', '89,90', 'mobile')" class="w-full py-3.5 rounded-xl bg-white/10 hover:bg-purple-600 text-white font-bold text-sm transition">Contratar 91 GB</button>
+          </div>
+        </div>
+
+        <!-- 124 GB -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between transition duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">SSD Ultra Black</span>
+              <span class="text-xs font-bold text-cyan-300 bg-cyan-500/10 px-2.5 py-1 rounded-lg">+1 Dependente Grátis</span>
+            </div>
+            <h3 class="text-4xl font-extrabold mt-3 text-white">124 GB</h3>
+            <p class="text-xs text-cyan-300 mt-1">Máximo rendimento e compartilhamento</p>
+
+            <div class="my-6 pt-6 border-t border-white/10 space-y-3 text-sm text-slate-300">
+              <p><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> Redes Sociais + Vídeos em 4K sem consumir dados</p>
+              <p><i class="fa-solid fa-cloud text-cyan-400 mr-2"></i> <strong>1 TB</strong> no SSD Drive Cloud</p>
+              <p><i class="fa-solid fa-music text-pink-400 mr-2"></i> <strong>SSD Music Hi-Fi</strong> + SSD Play Cinema</p>
+              <p><i class="fa-solid fa-headset text-emerald-400 mr-2"></i> Atendimento Prioritário VIP</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <div class="flex items-baseline mb-4">
+              <span class="text-sm text-slate-400 mr-1">R$</span>
+              <span class="text-4xl font-extrabold text-white">119</span><span class="text-lg font-bold text-white">,90</span><span class="text-xs text-slate-400 ml-1">/mês</span>
+            </div>
+            <button onclick="openCheckoutModal('Plano Móvel 124 GB', '119,90', 'mobile')" class="w-full py-3.5 rounded-xl bg-white/10 hover:bg-cyan-600 text-white font-bold text-sm transition">Contratar 124 GB</button>
+          </div>
+        </div>
+
+        <!-- PLANO ILIMITADO -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative border-2 border-ssd-cyan shadow-2xl shadow-cyan-500/20 md:col-span-2 lg:col-span-2 bg-gradient-to-br from-slate-900 via-ssd-card to-blue-950/80">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-ssd-cyan via-blue-500 to-purple-600 text-slate-950 font-extrabold text-xs px-6 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+            🔥 Sem Limite de Dados • Experiência Definitiva
+          </div>
+
+          <div class="grid md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-7 space-y-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-ssd-cyan">SSD Unlimited 5G Pure</span>
+              <h3 class="text-4xl sm:text-5xl font-extrabold text-white">SEM LIMITE <span class="gradient-text">DE DADOS</span></h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                A franquia verdadeiramente ilimitada na rede 5G Standalone. Navegue, baixe, faça streaming em 4K/8K e compartilhe a sua internet sem nenhuma redução de velocidade ou limite diário.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-200">
+                <p><i class="fa-solid fa-bolt text-ssd-cyan mr-2"></i> Banda 100% Livre (Até 1.5 Gbps)</p>
+                <p><i class="fa-solid fa-wifi text-ssd-cyan mr-2"></i> Tethering / Roteador Liberado</p>
+                <p><i class="fa-solid fa-cloud text-purple-400 mr-2"></i> <strong>2 TB</strong> no SSD Drive Cloud</p>
+                <p><i class="fa-solid fa-headphones text-pink-400 mr-2"></i> <strong>SSD Music Hi-Fi</strong> incluso</p>
+              </div>
+            </div>
+
+            <div class="md:col-span-5 flex flex-col justify-between h-full pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-white/10 md:pl-8">
+              <div>
+                <span class="text-xs text-slate-400 block uppercase">Valor Assinatura</span>
+                <div class="flex items-baseline mt-1">
+                  <span class="text-sm text-slate-400 mr-1">R$</span>
+                  <span class="text-5xl font-extrabold text-white">169</span><span class="text-xl font-bold text-white">,90</span><span class="text-xs text-slate-400 ml-1">/mês</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-shield-check mr-1 text-ssd-cyan"></i> Garantia de taxa fixa sem reajuste por 12 meses</p>
+              </div>
+
+              <button onclick="openCheckoutModal('Plano 5G Ilimitado', '169,90', 'mobile')" class="w-full mt-6 py-4 rounded-2xl bg-gradient-to-r from-ssd-cyan via-blue-500 to-purple-600 text-slate-950 font-extrabold text-base hover:opacity-95 transition shadow-lg shadow-cyan-500/20">
+                Assinar Plano Ilimitado
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2: FWA 5G (Fixed Wireless Access) -->
+  <section id="fwa" class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-12">
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-ssd-cyan/30 text-ssd-cyan text-xs font-bold uppercase">
+            <span>Tecnologia FWA 5G</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+            Ultra Banda Larga Sem Fios. <span class="gradient-text">Ligou na Tomada, Conectou.</span>
+          </h2>
+          <p class="text-slate-300 mt-4 leading-relaxed">
+            Esqueça obras, furos na parede ou espera por cabeamento óptico. O <strong>SSD FWA 5G</strong> entrega velocidade de fibra através da nossa rede 5G dedicada com roteador <strong>Wi-Fi 6 Mesh</strong> incluso em comodato. Ideal para residências, escritórios e filiais.
+          </p>
+        </div>
+        <div class="lg:col-span-6 grid sm:grid-cols-2 gap-6">
+          <!-- FWA Casa -->
+          <div class="glass-card p-6 rounded-3xl border border-cyan-500/30">
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs font-bold uppercase text-ssd-cyan bg-cyan-500/10 px-3 py-1 rounded-full">FWA Residencial</span>
+              <i class="fa-solid fa-house-signal text-xl text-ssd-cyan"></i>
+            </div>
+            <h3 class="text-3xl font-extrabold">600 Mega</h3>
+            <p class="text-xs text-slate-400 mt-1">Franquia Ilimitada • Wi-Fi 6 Dual Band</p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li><i class="fa-solid fa-bolt text-ssd-cyan mr-2"></i> Instalação zero (Auto-instalação em 2 min)</li>
+              <li><i class="fa-solid fa-cloud text-ssd-cyan mr-2"></i> 500 GB no SSD Drive incluso</li>
+              <li><i class="fa-solid fa-tv text-ssd-cyan mr-2"></i> App SSD Play TV incluso</li>
+            </ul>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 block">Por apenas</span>
+                <span class="text-2xl font-extrabold text-white">R$ 119,90</span><span class="text-xs text-slate-400">/mês</span>
+              </div>
+              <button onclick="openCheckoutModal('FWA Residencial 600 Mega', '119,90', 'fwa')" class="px-4 py-2.5 rounded-xl bg-ssd-cyan text-slate-950 font-bold text-xs hover:opacity-90">
+                Pedir Roteador
+              </button>
+            </div>
+          </div>
+
+          <!-- FWA Pro/Empresas -->
+          <div class="glass-card p-6 rounded-3xl border border-purple-500/30">
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs font-bold uppercase text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full">FWA Pro 5G</span>
+              <i class="fa-solid fa-building-shield text-xl text-purple-400"></i>
+            </div>
+            <h3 class="text-3xl font-extrabold">1 Giga</h3>
+            <p class="text-xs text-slate-400 mt-1">IP Fixo Opcional • Prioridade de Tráfego</p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li><i class="fa-solid fa-network-wired text-purple-400 mr-2"></i> Suporta até 128 dispositivos simultâneos</li>
+              <li><i class="fa-solid fa-cloud text-purple-400 mr-2"></i> 2 TB no SSD Drive Business</li>
+              <li><i class="fa-solid fa-shield-halved text-purple-400 mr-2"></i> Proteção DDoS & Firewall Integrado</li>
+            </ul>
+            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 block">Por apenas</span>
+                <span class="text-2xl font-extrabold text-white">R$ 169,90</span><span class="text-xs text-slate-400">/mês</span>
+              </div>
+              <button onclick="openCheckoutModal('FWA Pro 1 Giga', '169,90', 'fwa')" class="px-4 py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs hover:bg-purple-500">
+                Assinar 1 Giga
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3: SSD Drive Cloud (COM ABAS PC E MOBILE) -->
+  <section id="ssddrive" class="py-20 bg-gradient-to-b from-slate-950 to-ssd-dark border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-ssd-cyan text-2xl mx-auto mb-4">
+          <i class="fa-solid fa-cloud-bolt"></i>
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-ssd-cyan">Armazenamento Nível Operadora</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-2">SSD Drive Cloud</h2>
+        <p class="text-slate-300 mt-3 text-sm leading-relaxed">
+          Sua vida digital e os arquivos da sua empresa protegidos em servidores locais de ultra latência. O tráfego de upload e download no SSD Drive <strong>não desconta da sua franquia de dados 5G</strong>.
+        </p>
+
+        <!-- Seletor de Abas (PC vs Celular) -->
+        <div class="inline-flex p-1.5 rounded-2xl bg-slate-900 border border-white/10 mt-8 space-x-2">
+          <button id="tab-pc-btn" onclick="switchDriveTab('pc')" class="px-6 py-2.5 rounded-xl font-bold text-xs transition bg-ssd-cyan text-slate-950 shadow-lg">
+            <i class="fa-solid fa-desktop mr-2"></i> Para PC & Mac
+          </button>
+          <button id="tab-mobile-btn" onclick="switchDriveTab('mobile')" class="px-6 py-2.5 rounded-xl font-bold text-xs transition text-slate-400 hover:text-white">
+            <i class="fa-solid fa-mobile-screen mr-2"></i> Para Celular (iOS / Android)
+          </button>
+        </div>
+      </div>
+
+      <!-- Conteúdo da Aba 1: PC & Mac -->
+      <div id="drive-tab-pc" class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="glass-card p-6 sm:p-8 rounded-3xl border border-blue-500/20">
+            <h3 class="text-2xl font-extrabold text-white mb-3">Backup Automático no seu Computador</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              O aplicativo desktop do <strong>SSD Drive</strong> cria uma unidade de disco virtual nativa no seu Windows Explorer ou Mac Finder. Salve arquivos pesados como vídeos 4K, projetos 3D e documentos de trabalho sem ocupar espaço no seu HD interno.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-ssd-cyan/10 text-ssd-cyan flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-arrows-rotate text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Sincronização em Tempo Real</h4>
+                  <p class="text-xs text-slate-400">Edite documentos diretamente na nuvem com salvamento instantâneo.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-lock text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Criptografia AES-256 bits</h4>
+                  <p class="text-xs text-slate-400">Proteção de ponta a ponta. Somente você possui a chave dos seus dados.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-box-archive text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Histórico de Versões</h4>
+                  <p class="text-xs text-slate-400">Recupere arquivos alterados ou deletados há até 180 dias.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Visual Compacto PC -->
+        <div class="lg:col-span-6">
+          <div class="glass-card rounded-3xl p-6 border border-blue-500/30 flex flex-col justify-between max-h-[420px]">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="text-xs text-slate-400 font-mono ml-2">SSD Drive Desktop v4.2</span>
+              </div>
+              <span class="text-xs text-ssd-cyan font-bold bg-cyan-500/10 px-2.5 py-1 rounded-lg">Sincronizado</span>
+            </div>
+            
+            <div class="py-6 space-y-3">
+              <div class="p-3 rounded-xl bg-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <i class="fa-solid fa-folder-closed text-amber-400 text-xl"></i>
+                  <div>
+                    <p class="text-xs font-bold text-white">Projetos_2026_Final</p>
+                    <p class="text-[10px] text-slate-400">142 arquivos • 45.8 GB</p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-cloud-arrow-down text-ssd-cyan text-sm"></i>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <i class="fa-solid fa-file-video text-purple-400 text-xl"></i>
+                  <div>
+                    <p class="text-xs font-bold text-white">Apresentacao_Comercial_4K.mp4</p>
+                    <p class="text-[10px] text-slate-400">1.2 GB • Sincronizado agora</p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <i class="fa-solid fa-file-zipper text-blue-400 text-xl"></i>
+                  <div>
+                    <p class="text-xs font-bold text-white">Backup_Sistema_Windows.zip</p>
+                    <p class="text-[10px] text-slate-400">120 GB • Nuvem SSD Pure</p>
+                  </div>
+                </div>
+                <i class="fa-solid fa-lock text-slate-400 text-sm"></i>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs">
+              <span class="text-slate-400">Armazenamento Utilizado: <strong>450 GB / 1 TB</strong></span>
+              <a href="#" class="text-ssd-cyan font-bold hover:underline">Baixar para Windows/Mac <i class="fa-solid fa-download ml-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo da Aba 2: Celular -->
+      <div id="drive-tab-mobile" class="hidden grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="glass-card p-6 sm:p-8 rounded-3xl border border-pink-500/20">
+            <h3 class="text-2xl font-extrabold text-white mb-3">Sua Galeria Segura no Celular</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Nunca mais perca suas fotos ou vídeos importantes por falta de espaço ou roubo do celular. O aplicativo móvel do <strong>SSD Drive</strong> realiza backup automático em segundo plano sem gastar sua franquia de dados 5G.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-camera text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Backup de Fotos & Vídeos 4K</h4>
+                  <p class="text-xs text-slate-400">Salva imagens na resolução original sem compressão de qualidade.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-ssd-cyan/10 text-ssd-cyan flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-hard-drive text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Liberar Espaço no Celular</h4>
+                  <p class="text-xs text-slate-400">Apague fotos antigas do dispositivo mantendo-as 100% seguras na nuvem.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-face-smile text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Organização por Inteligência Artificial</h4>
+                  <p class="text-xs text-slate-400">Encontre fotos por pessoas, lugares, objetos e datas instantaneamente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Visual Compacto Mobile -->
+        <div class="lg:col-span-6">
+          <div class="glass-card rounded-3xl p-6 border border-pink-500/30 flex flex-col justify-between max-h-[420px]">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+              <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-mobile-screen text-pink-400"></i>
+                <span class="text-xs text-slate-300 font-bold">App SSD Drive Mobile</span>
+              </div>
+              <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-lg">Backup Ativo</span>
+            </div>
+            
+            <div class="py-6 grid grid-cols-3 gap-3">
+              <div class="aspect-square rounded-2xl bg-white/5 border border-white/10 p-2 flex flex-col justify-between">
+                <i class="fa-solid fa-image text-pink-400 text-lg"></i>
+                <div>
+                  <p class="text-[10px] font-bold text-white">Viagem_2026.jpg</p>
+                  <p class="text-[8px] text-slate-400">12 MB • Salvo</p>
+                </div>
+              </div>
+
+              <div class="aspect-square rounded-2xl bg-white/5 border border-white/10 p-2 flex flex-col justify-between">
+                <i class="fa-solid fa-video text-ssd-cyan text-lg"></i>
+                <div>
+                  <p class="text-[10px] font-bold text-white">Aniversario.mp4</p>
+                  <p class="text-[8px] text-slate-400">450 MB • Salvo</p>
+                </div>
+              </div>
+
+              <div class="aspect-square rounded-2xl bg-white/5 border border-white/10 p-2 flex flex-col justify-between">
+                <i class="fa-solid fa-file-pdf text-purple-400 text-lg"></i>
+                <div>
+                  <p class="text-[10px] font-bold text-white">Contrato_SSD.pdf</p>
+                  <p class="text-[8px] text-slate-400">2.4 MB • Salvo</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs">
+              <span class="text-slate-400">Disponível para iOS e Android</span>
+              <div class="flex space-x-2">
+                <a href="#" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-[10px]"><i class="fa-brands fa-apple mr-1"></i> App Store</a>
+                <a href="#" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-[10px]"><i class="fa-brands fa-google-play mr-1"></i> Google Play</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards de Planos Avulsos -->
+      <div class="mt-16 pt-12 border-t border-white/10">
+        <h3 class="text-xl font-bold text-white text-center mb-8">Planos Avulsos de Armazenamento SSD Drive</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-ssd-cyan transition">
+            <h4 class="font-bold text-slate-300">SSD Drive 500 GB</h4>
+            <p class="text-3xl font-extrabold text-white my-3">R$ 14,90<span class="text-xs text-slate-400">/mês</span></p>
+            <p class="text-xs text-slate-400 mb-4">Ideal para fotos de família e documentos pessoais.</p>
+            <button onclick="openCheckoutModal('SSD Drive 500 GB', '14,90', 'digital')" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-ssd-cyan hover:text-slate-950 font-bold text-xs text-white transition">Contratar 500 GB</button>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white/5 border border-ssd-cyan text-center relative">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ssd-cyan text-slate-950 text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">Recomendado</span>
+            <h4 class="font-bold text-ssd-cyan">SSD Drive 1 TB</h4>
+            <p class="text-3xl font-extrabold text-white my-3">R$ 24,90<span class="text-xs text-slate-400">/mês</span></p>
+            <p class="text-xs text-slate-400 mb-4">Para criadores de conteúdo e backups frequentes em 4K.</p>
+            <button onclick="openCheckoutModal('SSD Drive 1 TB', '24,90', 'digital')" class="w-full py-2.5 rounded-xl bg-ssd-cyan text-slate-950 font-bold text-xs transition">Contratar 1 TB</button>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-purple-500 transition">
+            <h4 class="font-bold text-purple-400">SSD Drive 2 TB Family</h4>
+            <p class="text-3xl font-extrabold text-white my-3">R$ 39,90<span class="text-xs text-slate-400">/mês</span></p>
+            <p class="text-xs text-slate-400 mb-4">Espaço gigante compartilhável com até 5 pessoas.</p>
+            <button onclick="openCheckoutModal('SSD Drive 2 TB Family', '39,90', 'digital')" class="w-full py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-xs text-white transition">Contratar 2 TB</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção Exclusiva: SSD Music -->
+  <section id="ssdmusic" class="py-20 bg-slate-950 border-t border-white/5 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="w-14 h-14 rounded-2xl bg-pink-600/20 border border-pink-500/40 flex items-center justify-center text-pink-400 text-2xl mx-auto mb-4">
+          <i class="fa-solid fa-headphones-simple"></i>
+        </div>
+        <span class="text-pink-400 font-bold text-xs uppercase tracking-widest">Streaming em Alta Fidelidade</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-2">SSD Music</h2>
+        <p class="text-slate-400 mt-3 text-sm leading-relaxed">
+          Mais de 100 milhões de músicas e podcasts em qualidade <strong>Hi-Fi Lossless (Sem Perda)</strong>. Ouça o dia todo sem gastar a sua franquia de dados 5G.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="glass-card p-8 rounded-3xl border border-pink-500/30">
+            <h3 class="text-2xl font-extrabold text-white mb-4">Por que o SSD Music é Diferente?</h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-compact-disc text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Qualidade Hi-Fi Studio (24-bit / 192 kHz)</h4>
+                  <p class="text-xs text-slate-400">Escute cada detalhe, instrumento e voz exatamente como o artista gravou no estúdio.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-ssd-cyan/20 text-ssd-cyan flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-bolt text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Zero-Rating de Dados 5G</h4>
+                  <p class="text-xs text-slate-400">Transmita em alta resolução no celular sem consumir a franquia do seu plano móvel.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-download text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Modo Offline sem Anúncios</h4>
+                  <p class="text-xs text-slate-400">Baixe suas listas favoritas e viaje ouvindo música mesmo sem sinal de internet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player Visual do SSD Music -->
+        <div class="lg:col-span-5">
+          <div class="glass-card p-6 rounded-3xl border border-pink-500/40 bg-gradient-to-b from-pink-950/40 to-slate-900 shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-400"><i class="fa-solid fa-signal mr-1"></i> Tocando em Hi-Fi</span>
+              <span class="text-[10px] bg-pink-500/20 text-pink-300 font-bold px-2.5 py-1 rounded-full">Zero Franquia</span>
+            </div>
+
+            <div class="w-full aspect-square rounded-2xl bg-gradient-to-tr from-pink-600 via-purple-600 to-blue-600 p-6 flex flex-col justify-end shadow-xl relative overflow-hidden mb-6">
+              <i class="fa-solid fa-music text-8xl text-white/20 absolute -top-4 -right-4"></i>
+              <span class="text-xs font-bold text-white/80 uppercase tracking-widest">Playlist Exclusiva</span>
+              <h4 class="text-2xl font-extrabold text-white">5G Ultra Beats 2026</h4>
+              <p class="text-xs text-white/70">Top 50 Faixas Lossless</p>
+            </div>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex justify-between text-xs font-mono text-slate-400">
+                <span>02:14</span>
+                <span>03:45</span>
+              </div>
+              <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-pink-500 to-ssd-cyan h-full w-3/5 rounded-full"></div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-white text-xl">
+              <i class="fa-solid fa-shuffle text-slate-500 hover:text-white cursor-pointer text-sm"></i>
+              <i class="fa-solid fa-backward-step cursor-pointer hover:text-pink-400"></i>
+              <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center text-slate-950 text-2xl shadow-lg shadow-pink-500/40 cursor-pointer hover:scale-105 transition">
+                <i class="fa-solid fa-pause"></i>
+              </div>
+              <i class="fa-solid fa-forward-step cursor-pointer hover:text-pink-400"></i>
+              <i class="fa-solid fa-heart text-pink-400 cursor-pointer text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planos Avulsos SSD Music -->
+      <div class="pt-8 border-t border-white/10">
+        <h3 class="text-xl font-bold text-white text-center mb-8">Planos de Assinatura Avulsa SSD Music</h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          
+          <div class="glass-card p-6 rounded-2xl border border-pink-500/20 text-center flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-400">Individual</span>
+              <h4 class="text-2xl font-extrabold text-white mt-1">SSD Music Solo</h4>
+              <p class="text-3xl font-extrabold text-white my-3">R$ 16,90<span class="text-xs text-slate-400">/mês</span></p>
+              <p class="text-xs text-slate-400 mb-4">1 Conta • Áudio Lossless Hi-Fi • Downloads ilimitados no celular ou PC.</p>
+            </div>
+            <button onclick="openCheckoutModal('SSD Music Solo', '16,90', 'digital')" class="w-full py-3 rounded-xl bg-white/10 hover:bg-pink-600 text-white font-bold text-xs transition">
+              Assinar Individual
+            </button>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-pink-500 text-center flex flex-col justify-between relative bg-pink-950/10">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pink-500 text-slate-950 text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">Mais Economia</span>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Família (Até 6 Pessoas)</span>
+              <h4 class="text-2xl font-extrabold text-white mt-1">SSD Music Family</h4>
+              <p class="text-3xl font-extrabold text-white my-3">R$ 26,90<span class="text-xs text-slate-400">/mês</span></p>
+              <p class="text-xs text-slate-400 mb-4">6 Perfis individuais com playlists separadas e controle dos pais.</p>
+            </div>
+            <button onclick="openCheckoutModal('SSD Music Family', '26,90', 'digital')" class="w-full py-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs transition shadow-lg shadow-pink-600/30">
+              Assinar Plano Família
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção Dev & Segurança Digital -->
+  <section id="devsec" class="py-20 bg-gradient-to-b from-slate-950 via-ssd-dark to-slate-950 border-t border-white/10 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-ssd-cyan/20 to-purple-600/20 border border-ssd-cyan/30 flex items-center justify-center text-ssd-cyan text-2xl mx-auto mb-4">
+          <i class="fa-solid fa-code-merge"></i>
+        </div>
+        <span class="text-ssd-cyan font-bold text-xs uppercase tracking-widest">Soluções Corporativas & Engenharia de TI</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-2">Dev, Apps, Dados & Segurança</h2>
+        <p class="text-slate-400 mt-3 text-sm leading-relaxed">
+          Além da conectividade 5G, criamos ecossistemas digitais sob medida para o seu negócio com arquitetura em nuvem, aplicativos nativos e proteção cibernética avançada.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Web -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between transition duration-300 hover:border-ssd-cyan hover:-translate-y-1">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-ssd-cyan flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Desenvolvimento Web</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Sites institucionais, Landing Pages de alta conversão e e-commerces sob medida construídos para máxima velocidade.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4">
+              <li><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> Design responsivo & Mobile-First</li>
+              <li><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> Otimização SEO & Alta Velocidade</li>
+              <li><i class="fa-solid fa-check text-ssd-cyan mr-2"></i> Integração de APIs e Pagamentos</li>
+            </ul>
+          </div>
+          <button onclick="openCheckoutModal('Desenvolvimento Web & Portais', 'Orçamento', 'dev')" class="w-full mt-8 py-3 rounded-xl bg-white/10 hover:bg-ssd-primary text-white font-bold text-xs transition">
+            Solicitar Projeto Web
+          </button>
+        </div>
+
+        <!-- Mobile Apps -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between transition duration-300 hover:border-purple-500 hover:-translate-y-1">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Apps iOS & Android</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Desenvolvimento de aplicativos nativos e híbridos. Leve seu negócio para a App Store e Google Play.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4">
+              <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Interface UX/UI Intuitiva</li>
+              <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Notificações Push & Geolocalização</li>
+              <li><i class="fa-solid fa-check text-purple-400 mr-2"></i> Sincronização 5G em Tempo Real</li>
+            </ul>
+          </div>
+          <button onclick="openCheckoutModal('Desenvolvimento de Aplicativos', 'Orçamento', 'dev')" class="w-full mt-8 py-3 rounded-xl bg-white/10 hover:bg-purple-600 text-white font-bold text-xs transition">
+            Solicitar App Mobile
+          </button>
+        </div>
+
+        <!-- Banco de Dados -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between transition duration-300 hover:border-emerald-400 hover:-translate-y-1">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Bancos de Dados & Cloud</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Modelagem, administração e otimização de bancos de dados relacionais e NoSQL de alta performance.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4">
+              <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> PostgreSQL, MySQL & MongoDB</li>
+              <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Escalabilidade & Alta Disponibilidade</li>
+              <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Migration & Backup Redundante</li>
+            </ul>
+          </div>
+          <button onclick="openCheckoutModal('Consultoria de Banco de Dados', 'Orçamento', 'dev')" class="w-full mt-8 py-3 rounded-xl bg-white/10 hover:bg-emerald-500 hover:text-slate-950 text-white font-bold text-xs transition">
+            Consultar Especialista
+          </button>
+        </div>
+
+        <!-- Segurança -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between transition duration-300 hover:border-pink-500 hover:-translate-y-1">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Segurança Digital & LGPD</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">
+              Proteja sua empresa contra vazamentos de dados, Ransomware e ataques DDoS com blindagem cibernética.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4">
+              <li><i class="fa-solid fa-check text-pink-400 mr-2"></i> Criptografia End-to-End AES-256</li>
+              <li><i class="fa-solid fa-check text-pink-400 mr-2"></i> Auditoria de Código & Pentest</li>
+              <li><i class="fa-solid fa-check text-pink-400 mr-2"></i> Adequação à LGPD & Firewall Pro</li>
+            </ul>
+          </div>
+          <button onclick="openCheckoutModal('Segurança Digital & Blindagem', 'Orçamento', 'dev')" class="w-full mt-8 py-3 rounded-xl bg-white/10 hover:bg-pink-600 text-white font-bold text-xs transition">
+            Solicitar Auditoria
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção 4: SSD Play - TV & Streaming Hub -->
+  <section id="streaming" class="py-20 bg-slate-950 border-t border-white/5 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-purple-400 font-bold text-xs uppercase tracking-widest">Entretenimento Total</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-2">SSD Play: TV Ao Vivo, Filmes & Séries</h2>
+        <p class="text-slate-400 mt-3">Transforme qualquer tela em um cinema com mais de 100 canais ao vivo, catálogo on-demand e integração com os maiores streamings.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 mb-12">
+        <div class="glass-card p-6 rounded-2xl border border-pink-500/20 text-center">
+          <i class="fa-solid fa-tv text-3xl text-pink-400 mb-3"></i>
+          <h3 class="font-bold text-white text-base">100+ Canais HD/4K</h3>
+          <p class="text-xs text-slate-400 mt-1">Esportes ao vivo, notícias, abertos e fechados.</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-purple-500/20 text-center">
+          <i class="fa-solid fa-film text-3xl text-purple-400 mb-3"></i>
+          <h3 class="font-bold text-white text-base">Milhares de Filmes</h3>
+          <p class="text-xs text-slate-400 mt-1">Lançamentos do cinema e séries completas.</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-ssd-cyan/20 text-center">
+          <i class="fa-solid fa-trophy text-3xl text-ssd-cyan mb-3"></i>
+          <h3 class="font-bold text-white text-base">Esportes sem Latência</h3>
+          <p class="text-xs text-slate-400 mt-1">Transmissão em tempo real sem atrasos.</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-blue-500/20 text-center">
+          <i class="fa-solid fa-music text-3xl text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-white text-base">SSD Music Hi-Fi</h3>
+          <p class="text-xs text-slate-400 mt-1">100M+ de faixas com áudio Lossless.</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-pink-500/30 bg-gradient-to-r from-slate-900/90 via-ssd-card to-purple-950/50">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-pink-400">Tudo na Mesma Fatura</span>
+            <h3 class="text-3xl font-extrabold text-white">Monte seu Combo com os Maiores Streamings</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Adicione suas assinaturas favoritas no seu plano SSD em uma única cobrança mensal.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <span class="font-extrabold text-red-500 text-sm block">NETFLIX</span>
+                <span class="text-[10px] text-slate-400">R$ 18,90/mês</span>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <span class="font-extrabold text-purple-400 text-sm block">MAX</span>
+                <span class="text-[10px] text-slate-400">R$ 19,90/mês</span>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <span class="font-extrabold text-blue-400 text-sm block">DISNEY+</span>
+                <span class="text-[10px] text-slate-400">R$ 17,90/mês</span>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <span class="font-extrabold text-cyan-400 text-sm block">PRIME VIDEO</span>
+                <span class="text-[10px] text-slate-400">Incluso no Pós VIP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center space-y-4">
+              <h4 class="font-bold text-white text-base">Assista Onde e Quando Quiser</h4>
+              <p class="text-xs text-slate-400">Até 4 telas simultâneas em resolução 4K Ultra HD.</p>
+              <button onclick="openCheckoutModal('SSD Play Cinema', '29,90', 'digital')" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
+                Assinar SSD Play
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção: Depoimentos (Swiper) -->
+  <section id="depoimentos" class="py-20 bg-slate-950/80 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-ssd-cyan font-bold text-xs uppercase tracking-widest">Opinião de Quem Usa</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">O que nossos clientes dizem</h2>
+      </div>
+
+      <div class="swiper mySwiper pb-12">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full border border-white/10">
+              <p class="text-slate-300 text-sm italic leading-relaxed">
+                "O FWA 5G salvou o meu home office! A velocidade passa dos 600 Mega e a instalação foi super fácil. Além disso, a equipe desenvolveu nosso sistema corporativo com total segurança."
+              </p>
+              <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-white/10">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-ssd-cyan to-blue-600 flex items-center justify-center font-bold text-slate-950">RC</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Rodrigo Cardoso</h4>
+                  <p class="text-xs text-slate-400">Desenvolvedor • São Paulo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full border border-white/10">
+              <p class="text-slate-300 text-sm italic leading-relaxed">
+                "O plano ilimitado de 5G é incrível. Roteio o celular o dia todo para enviar vídeos em 4K. Nunca tive redução de velocidade."
+              </p>
+              <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-white/10">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white">AM</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Amanda Mendes</h4>
+                  <p class="text-xs text-slate-400">Produtora de Conteúdo • Rio de Janeiro</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between h-full border border-white/10">
+              <p class="text-slate-300 text-sm italic leading-relaxed">
+                "Migrei a telefonia, a nuvem e a segurança da minha empresa para a SSD. Atendimento impecável e grande economia."
+              </p>
+              <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-white/10">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-400 to-teal-600 flex items-center justify-center font-bold text-slate-950">FL</div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Fernando Lima</h4>
+                  <p class="text-xs text-slate-400">Diretor B2B • Curitiba</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Corporativo -->
+  <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-white/10">
+        <div class="col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-ssd-primary flex items-center justify-center text-white">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span class="text-xl font-extrabold text-white">SSD Soluções</span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            Operadora convergente de telecomunicações, engenharia de software e serviços digitais.
+          </p>
+          <p class="text-xs text-slate-500 mt-4">Central de Relacionamento 24h: <strong>0800 773 5000</strong></p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Planos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#movel5g" class="hover:text-white">Planos 5G</a></li>
+            <li><a href="#fwa" class="hover:text-white">FWA 5G</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Serviços</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#devsec" class="hover:text-white">Desenvolvimento Web/App</a></li>
+            <li><a href="#ssddrive" class="hover:text-white">SSD Drive Cloud</a></li>
+            <li><a href="#ssdmusic" class="hover:text-white">SSD Music</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Atendimento</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#" class="hover:text-white">Suporte Técnico</a></li>
+            <li><a href="#" class="hover:text-white">LGPD & Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center text-xs text-slate-500">
+        <p>© 2026 SSD Soluções Telecomunicações S.A. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Interativo Adaptável (Móvel vs Digital/Dev) -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+    <div class="glass-card w-full max-w-xl rounded-3xl p-6 sm:p-8 border border-ssd-cyan/30 relative shadow-2xl">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-xs font-bold text-ssd-cyan uppercase tracking-widest">Solicitação de Contratação</span>
+        <h3 id="modalPlanTitle" class="text-2xl font-extrabold text-white mt-1">Contratar Serviço</h3>
+        <p class="text-xs text-slate-400 mt-0.5">Valor / Condição: <strong id="modalPlanPrice" class="text-ssd-cyan">R$ 0,00/mês</strong></p>
+      </div>
+
+      <div id="modalForm" class="space-y-4">
+        <!-- Bloco Exclusivo de Telefonia/Chip (Exibido apenas em Planos Móveis 5G) -->
+        <div id="chipSection" class="space-y-4 hidden">
+          <h4 class="text-sm font-bold text-white mb-2">1. Escolha o tipo de conexão:</h4>
+          <div onclick="selectChipOption('esim')" id="opt-esim" class="p-4 rounded-2xl bg-white/5 border-2 border-ssd-cyan cursor-pointer transition flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-qrcode text-2xl text-ssd-cyan"></i>
+              <div>
+                <p class="text-sm font-bold text-white">eSIM Instantâneo (Virtual)</p>
+                <p class="text-xs text-slate-400">Ativação via QR Code por e-mail</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check text-ssd-cyan" id="check-esim"></i>
+          </div>
+
+          <div onclick="selectChipOption('sim')" id="opt-sim" class="p-4 rounded-2xl bg-white/5 border border-white/10 cursor-pointer transition flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-sim-card text-2xl text-slate-400"></i>
+              <div>
+                <p class="text-sm font-bold text-white">Chip Físico Tradicional</p>
+                <p class="text-xs text-slate-400">Envio de equipamento por Correios</p>
+              </div>
+            </div>
+            <i class="fa-regular fa-circle text-slate-600" id="check-sim"></i>
+          </div>
+
+          <h4 class="text-sm font-bold text-white pt-2 mb-2">2. Número da Linha:</h4>
+          <div class="space-y-3">
+            <label class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between cursor-pointer">
+              <div class="flex items-center space-x-3">
+                <input type="radio" name="numOption" value="portability" checked class="accent-ssd-cyan" onchange="togglePortInput(true)">
+                <span class="text-sm font-bold text-white">Portabilidade (Manter meu número)</span>
+              </div>
+            </label>
+
+            <div id="port-input-box" class="p-3 bg-slate-900 rounded-xl border border-white/10">
+              <input type="text" id="custPortNumber" placeholder="DDD + Número atual (ex: 85 99999-9999)" class="w-full bg-transparent text-sm text-white focus:outline-none placeholder-slate-500">
+            </div>
+
+            <label class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between cursor-pointer">
+              <div class="flex items-center space-x-3">
+                <input type="radio" name="numOption" value="new" class="accent-ssd-cyan" onchange="togglePortInput(false)">
+                <span class="text-sm font-bold text-white">Quero uma nova linha 5G</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Dados do Cliente (Comum a Todos) -->
+        <h4 class="text-sm font-bold text-white mb-2">Dados do Titular / Solicitante:</h4>
+        <div class="space-y-3">
+          <div>
+            <label class="text-[11px] text-slate-400 uppercase font-bold mb-1 block">Nome Completo ou Razão Social</label>
+            <input type="text" id="custName" placeholder="Digite seu nome" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white focus:border-ssd-cyan focus:outline-none">
+          </div>
+          
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-[11px] text-slate-400 uppercase font-bold mb-1 block">WhatsApp / Telefone</label>
+              <input type="tel" id="custPhone" placeholder="(85) 99999-9999" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white focus:border-ssd-cyan focus:outline-none">
+            </div>
+            <div>
+              <label class="text-[11px] text-slate-400 uppercase font-bold mb-1 block">CPF / CNPJ</label>
+              <input type="text" id="custCpf" placeholder="000.000.000-00" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white focus:border-ssd-cyan focus:outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="text-[11px] text-slate-400 uppercase font-bold mb-1 block">E-mail para Cadastro / Ativação</label>
+            <input type="email" id="custEmail" placeholder="seuemail@exemplo.com" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white focus:border-ssd-cyan focus:outline-none">
+          </div>
+
+          <div>
+            <label class="text-[11px] text-slate-400 uppercase font-bold mb-1 block">Endereço Completo & CEP</label>
+            <input type="text" id="custAddress" placeholder="Rua, Número, Bairro, Cidade - CEP" class="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm text-white focus:border-ssd-cyan focus:outline-none">
+          </div>
+        </div>
+
+        <button onclick="sendToWhatsApp()" class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm mt-6 shadow-lg shadow-emerald-500/20 flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Enviar Pedido via WhatsApp
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const WHATSAPP_NUMBER = "5585999999999";
+    let currentCategory = "mobile";
+    let selectedPlan = "";
+    let selectedPrice = "";
+    let selectedChipType = "esim";
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 24 },
+        1024: { slidesPerView: 3, spaceBetween: 30 }
+      }
+    });
+
+    function switchDriveTab(tab) {
+      const pcTab = document.getElementById('drive-tab-pc');
+      const mobileTab = document.getElementById('drive-tab-mobile');
+      const pcBtn = document.getElementById('tab-pc-btn');
+      const mobileBtn = document.getElementById('tab-mobile-btn');
+
+      if (tab === 'pc') {
+        pcTab.classList.remove('hidden');
+        mobileTab.classList.add('hidden');
+        pcBtn.className = "px-6 py-2.5 rounded-xl font-bold text-xs transition bg-ssd-cyan text-slate-950 shadow-lg";
+        mobileBtn.className = "px-6 py-2.5 rounded-xl font-bold text-xs transition text-slate-400 hover:text-white";
+      } else {
+        pcTab.classList.add('hidden');
+        mobileTab.classList.remove('hidden');
+        mobileBtn.className = "px-6 py-2.5 rounded-xl font-bold text-xs transition bg-ssd-cyan text-slate-950 shadow-lg";
+        pcBtn.className = "px-6 py-2.5 rounded-xl font-bold text-xs transition text-slate-400 hover:text-white";
+      }
+    }
+
+    function openCheckoutModal(planName, planPrice, category = "mobile") {
+      selectedPlan = planName;
+      selectedPrice = planPrice;
+      currentCategory = category;
+
+      document.getElementById('modalPlanTitle').innerText = planName;
+      document.getElementById('modalPlanPrice').innerText = planPrice.includes('R$') ? planPrice : (planPrice === 'Orçamento' ? 'Sob Consulta' : 'R$ ' + planPrice + '/mês');
+
+      const chipSec = document.getElementById('chipSection');
+      if (category === 'mobile') {
+        chipSec.classList.remove('hidden');
+      } else {
+        chipSec.classList.add('hidden');
+      }
+
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function selectChipOption(type) {
+      selectedChipType = type;
+      const esim = document.getElementById('opt-esim');
+      const sim = document.getElementById('opt-sim');
+      const checkEsim = document.getElementById('check-esim');
+      const checkSim = document.getElementById('check-sim');
+
+      if(type === 'esim') {
+        esim.className = "p-4 rounded-2xl bg-white/5 border-2 border-ssd-cyan cursor-pointer transition flex items-center justify-between";
+        sim.className = "p-4 rounded-2xl bg-white/5 border border-white/10 cursor-pointer transition flex items-center justify-between";
+        checkEsim.className = "fa-solid fa-circle-check text-ssd-cyan";
+        checkSim.className = "fa-regular fa-circle text-slate-600";
+      } else {
+        sim.className = "p-4 rounded-2xl bg-white/5 border-2 border-ssd-cyan cursor-pointer transition flex items-center justify-between";
+        esim.className = "p-4 rounded-2xl bg-white/5 border border-white/10 cursor-pointer transition flex items-center justify-between";
+        checkSim.className = "fa-solid fa-circle-check text-ssd-cyan";
+        checkEsim.className = "fa-regular fa-circle text-slate-600";
+      }
+    }
+
+    function togglePortInput(show) {
+      const box = document.getElementById('port-input-box');
+      if(show) box.classList.remove('hidden');
+      else box.classList.add('hidden');
+    }
+
+    function sendToWhatsApp() {
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const cpf = document.getElementById('custCpf').value.trim();
+      const email = document.getElementById('custEmail').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+
+      if(!name || !phone || !email) {
+        alert("Por favor, preencha pelo menos seu Nome, Telefone/WhatsApp e E-mail.");
+        return;
+      }
+
+      let message = `🛒 *SOLICITAÇÃO DE SERVIÇO - SSD SOLUÇÕES*\n\n`;
+      message += `📦 *Produto/Serviço:* ${selectedPlan}\n`;
+      message += `💰 *Valor/Condição:* ${selectedPrice}\n\n`;
+
+      if (currentCategory === 'mobile') {
+        const isPortability = document.querySelector('input[name="numOption"]:checked').value === "portability";
+        const portNum = document.getElementById('custPortNumber').value.trim();
+        let lineDetail = isPortability ? `Manter número atual (${portNum || "Não informado"})` : "Nova Linha 5G";
+        let chipText = selectedChipType === "esim" ? "eSIM Virtual" : "Chip Físico";
+
+        message += `--- *DETALHES DA LINHA* ---\n`;
+        message += `📱 *Tipo de Chip:* ${chipText}\n`;
+        message += `🔢 *Opção de Número:* ${lineDetail}\n\n`;
+      }
+
+      message += `--- *DADOS DO CLIENTE* ---\n`;
+      message += `👤 *Nome:* ${name}\n`;
+      message += `📞 *WhatsApp:* ${phone}\n`;
+      message += `🆔 *CPF/CNPJ:* ${cpf || "Não informado"}\n`;
+      message += `📧 *E-mail:* ${email}\n`;
+      message += `📍 *Endereço/CEP:* ${address || "Não informado"}`;
+
+      let encodedMsg = encodeURIComponent(message);
+      let whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
+
+      window.open(whatsappUrl, '_blank');
+      closeCheckoutModal();
+    }
+  </script>
+</body>
+</html>
